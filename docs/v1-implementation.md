@@ -1,16 +1,16 @@
-# v1: central settlement, follower validators
+# v1: what is implemented
 
 Date: 2026-11-24. This note maps `incentive-mechanism.md` onto what v1 implements across two repositories:
 
 - `trajrl-provider`: the provider site, settlement, and the validator API
-- this repository: the spec and the follower validator
+- this repository: the spec and the validator
 
 ## Decisions
 
 | Topic | v1 | Mechanism doc |
 |---|---|---|
 | Who computes the allocation | The settlement worker in `trajrl-provider`, deterministic (`baseline-v1`) | Eleven, with the baseline as fallback. Eleven's slot `allocation` exists and is `null` |
-| Validators | Follow. They verify, re-derive and check rails, then submit | Same: they check Eleven's allocation against the rails |
+| Validators | Verify the signature, re-derive every number, check the rails, then submit | Same: they check Eleven's allocation against the rails |
 | Prices | An admin catalog target, clamped to ±band around the median of market sources and to a max move per tempo | Eleven prices within the same rails |
 | Market sources | Pluggable (`static`, `http-json`); each observation is stored with a response hash | Seven or more exchanges and cloud list prices, fetched inside TDX |
 | Units | Reference-unit-hours (`tdx.c3-4` = 1, `tdx.c3-8` = 2), measured in seconds, split at tempo boundaries | Same |

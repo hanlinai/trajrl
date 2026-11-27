@@ -1,7 +1,8 @@
-# Running an SN11 validator (v1, follower)
+# Running an SN11 validator (v1)
 
-In v1 the allocation is computed centrally and signed. Your validator neither scores nor computes. It
-refuses anything it cannot reproduce and submits what it can.
+In v1 the allocation is computed by a deterministic, published derivation and signed once per tempo. Your
+validator reproduces it independently from the statement's own line items: it refuses anything it cannot
+reproduce and submits what it can.
 
 ## Every tick (default 60 s)
 

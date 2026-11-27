@@ -331,7 +331,7 @@ Each commitment has a persistent resource ID, specification version, owner and u
 | Draining or awaiting release | Approved real exit capacity earns base only while obligations and release remain. |
 | Retired | No supply contribution; shutdown clearance and completed withdrawal remain separate statuses. |
 
-Initial scheduling is centralized. Before each control period, the operator signs a capacity ceiling, cost basis, ready-capacity floor and exit reserve. Trusted seven-day peak usage and a versioned headroom factor can inform readiness estimates, but new supply still needs a signed budget and independent-demand decision. Raw starts, occupancy and promotional bursts cannot automatically expand admission.
+At launch, before each control period, the operator signs a capacity ceiling, cost basis, ready-capacity floor and exit reserve. Trusted seven-day peak usage and a versioned headroom factor can inform readiness estimates, but new supply still needs a signed budget and independent-demand decision. Raw starts, occupancy and promotional bursts cannot automatically expand admission.
 
 Existing user obligations and approved exit reservations take priority. New applications use only the residual budget. A falling budget stops new admission and requires publishing the shortfall; it does not cancel an honest miner's approved exit reservation. Equivalent applications are ordered by verified reliability, sufficient funded collateral, reservation time and resource ID. New entrants use a published probation class.
 

@@ -1,7 +1,6 @@
 """Fetch and verify the master-signed allocation statement (spec/statement-v1.md).
 
-Trust model: settlement is centralized. This validator trusts nothing it is
-told — it checks that the master hotkey pinned in *local* config signed these
+Trust model: this validator trusts nothing it is told — it checks that the master hotkey pinned in *local* config signed these
 exact bytes, then (in rails.py / mechanism.py) re-derives every number from the
 statement's own line items before submitting anything.
 

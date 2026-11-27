@@ -1,4 +1,4 @@
-# Follower validator for SN11. Pin TRAJRL_MASTER_HOTKEY and TRAJRL_OWNER_HOTKEY from the
+# Validator for SN11. Pin TRAJRL_MASTER_HOTKEY and TRAJRL_OWNER_HOTKEY from the
 # subnet's published values — never from the provider API.
 services:
   validator:

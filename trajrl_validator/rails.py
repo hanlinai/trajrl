@@ -1,4 +1,4 @@
-"""Decide what to submit: the follow policy of spec §Follow policy.
+"""Decide what to submit: the submission policy of spec §Submission policy.
 
     1. allocation (Eleven) present and passes  → submit it
     2. baseline weights pass                   → submit them

@@ -1,6 +1,6 @@
 # SN11 allocation statement — v1
 
-Status: v1, centrally settled. The provider site (`trajrl-provider`) computes and
+Status: v1. The provider site (`trajrl-provider`) computes and
 signs one statement per native tempo. Validators (`trajrl_validator`) verify the
 signature, **re-derive every number they can from the statement's own line
 items**, check the rails, and submit the resulting weights. Nothing in the
@@ -157,7 +157,7 @@ give (65535 − Σ q_i) extra units, one each, by r_i descending, ties by uid as
 | Payout cap | Σ alloc ≤ value_uusd and per coldkey Σ alloc ≤ net |
 | Ledger continuity | if the validator holds the statement for `tempo − 1`, each coldkey's `opening_uusd` equals that statement's `closing_uusd` (0 if absent) |
 
-## Follow policy
+## Submission policy
 
 1. `allocation` present and passes → submit it (v1: never present).
 2. Baseline (`weights`) passes → submit it.

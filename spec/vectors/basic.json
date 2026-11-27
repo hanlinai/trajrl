@@ -1,0 +1,374 @@
+{
+ "expected": {
+  "accounts": [
+   {
+    "closing_uusd": 0,
+    "coldkey": "5CK_A",
+    "gross_uusd": 2352000,
+    "hotkeys": [
+     {
+      "alloc_uusd": 1008000,
+      "base_uusd": 1008000,
+      "bonus_uusd": 0,
+      "gross_uusd": 1008000,
+      "hotkey": "5HK_A1",
+      "orders_uusd": 0,
+      "supply": [
+       {
+        "eligible_muh": 0,
+        "muh": 3600,
+        "spec": "tdx.c3-4"
+       }
+      ],
+      "uid": 3
+     },
+     {
+      "alloc_uusd": 1344000,
+      "base_uusd": 1344000,
+      "bonus_uusd": 0,
+      "gross_uusd": 1344000,
+      "hotkey": "5HK_A2",
+      "orders_uusd": 0,
+      "supply": [
+       {
+        "eligible_muh": 0,
+        "muh": 2400,
+        "spec": "tdx.c3-8"
+       }
+      ],
+      "uid": 7
+     }
+    ],
+    "net_uusd": 2352000,
+    "opening_uusd": 0,
+    "penalties_uusd": 0
+   },
+   {
+    "closing_uusd": 0,
+    "coldkey": "5CK_B",
+    "gross_uusd": 3360000,
+    "hotkeys": [
+     {
+      "alloc_uusd": 3360000,
+      "base_uusd": 3360000,
+      "bonus_uusd": 0,
+      "gross_uusd": 3360000,
+      "hotkey": "5HK_B1",
+      "orders_uusd": 0,
+      "supply": [
+       {
+        "eligible_muh": 0,
+        "muh": 12000,
+        "spec": "tdx.c3-4"
+       }
+      ],
+      "uid": 5
+     }
+    ],
+    "net_uusd": 3360000,
+    "opening_uusd": 0,
+    "penalties_uusd": 0
+   },
+   {
+    "closing_uusd": 0,
+    "coldkey": "5CK_C",
+    "gross_uusd": 336000,
+    "hotkeys": [
+     {
+      "alloc_uusd": 236000,
+      "base_uusd": 336000,
+      "bonus_uusd": 0,
+      "gross_uusd": 336000,
+      "hotkey": "5HK_C1",
+      "orders_uusd": 0,
+      "supply": [
+       {
+        "eligible_muh": 0,
+        "muh": 1200,
+        "spec": "tdx.c3-4"
+       }
+      ],
+      "uid": 9
+     }
+    ],
+    "net_uusd": 236000,
+    "opening_uusd": 0,
+    "penalties_uusd": 100000
+   }
+  ],
+  "allocation": null,
+  "bonus": {
+   "b_eff_ppm": 0,
+   "base_uusd": 6048000,
+   "eligible_uusd": 0
+  },
+  "catalog_version": 1,
+  "emission": {
+   "alpha_budget_rao": 147600000000,
+   "alpha_price_uusd": 1490000,
+   "value_uusd": 219924000
+  },
+  "exceptions": [],
+  "inputs_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+  "netuid": 11,
+  "prices": [
+   {
+    "class": "sandbox",
+    "prev_price_uusd": 280000,
+    "price_uusd": 280000,
+    "ref_median_uusd": 280000,
+    "sources": [
+     {
+      "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "src0",
+      "value_uusd": 270000
+     },
+     {
+      "hash": "0000000000000000000000000000000000000000000000000000000000000001",
+      "name": "src1",
+      "value_uusd": 280000
+     },
+     {
+      "hash": "0000000000000000000000000000000000000000000000000000000000000002",
+      "name": "src2",
+      "value_uusd": 290000
+     }
+    ],
+    "spec": "tdx.c3-4",
+    "status": "live"
+   },
+   {
+    "class": "sandbox",
+    "prev_price_uusd": 560000,
+    "price_uusd": 560000,
+    "ref_median_uusd": 560000,
+    "sources": [
+     {
+      "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "src0",
+      "value_uusd": 540000
+     },
+     {
+      "hash": "0000000000000000000000000000000000000000000000000000000000000001",
+      "name": "src1",
+      "value_uusd": 560000
+     },
+     {
+      "hash": "0000000000000000000000000000000000000000000000000000000000000002",
+      "name": "src2",
+      "value_uusd": 580000
+     }
+    ],
+    "spec": "tdx.c3-8",
+    "status": "live"
+   }
+  ],
+  "rails": {
+   "band_bps": 2500,
+   "bonus_budget_ppm": 100000,
+   "bonus_cap_ppm": 200000,
+   "bonus_enabled": false,
+   "concentration_bps": 2000,
+   "max_move_bps": 1000,
+   "version": 1
+  },
+  "recycle": {
+   "alloc_uusd": 213976000,
+   "hotkey": "5OWNER",
+   "uid": 0
+  },
+  "rule_version": "baseline-v1",
+  "tempo": 100,
+  "v": 1,
+  "weights": [
+   [
+    "5OWNER",
+    0,
+    63763
+   ],
+   [
+    "5HK_A1",
+    3,
+    300
+   ],
+   [
+    "5HK_B1",
+    5,
+    1001
+   ],
+   [
+    "5HK_A2",
+    7,
+    401
+   ],
+   [
+    "5HK_C1",
+    9,
+    70
+   ]
+  ],
+  "window": {
+   "end_block": 36461,
+   "end_ts": 1763437532,
+   "start_block": 36100,
+   "start_ts": 1763433200
+  }
+ },
+ "input": {
+  "accounts": [
+   {
+    "coldkey": "5CK_A",
+    "hotkeys": [
+     {
+      "hotkey": "5HK_A1",
+      "orders_uusd": 0,
+      "supply": [
+       {
+        "eligible_muh": 0,
+        "muh": 3600,
+        "spec": "tdx.c3-4"
+       }
+      ],
+      "uid": 3
+     },
+     {
+      "hotkey": "5HK_A2",
+      "orders_uusd": 0,
+      "supply": [
+       {
+        "eligible_muh": 0,
+        "muh": 2400,
+        "spec": "tdx.c3-8"
+       }
+      ],
+      "uid": 7
+     }
+    ],
+    "opening_uusd": 0,
+    "penalties_uusd": 0
+   },
+   {
+    "coldkey": "5CK_B",
+    "hotkeys": [
+     {
+      "hotkey": "5HK_B1",
+      "orders_uusd": 0,
+      "supply": [
+       {
+        "eligible_muh": 0,
+        "muh": 12000,
+        "spec": "tdx.c3-4"
+       }
+      ],
+      "uid": 5
+     }
+    ],
+    "opening_uusd": 0,
+    "penalties_uusd": 0
+   },
+   {
+    "coldkey": "5CK_C",
+    "hotkeys": [
+     {
+      "hotkey": "5HK_C1",
+      "orders_uusd": 0,
+      "supply": [
+       {
+        "eligible_muh": 0,
+        "muh": 1200,
+        "spec": "tdx.c3-4"
+       }
+      ],
+      "uid": 9
+     }
+    ],
+    "opening_uusd": 0,
+    "penalties_uusd": 100000
+   }
+  ],
+  "allocation": null,
+  "catalog_version": 1,
+  "emission": {
+   "alpha_budget_rao": 147600000000,
+   "alpha_price_uusd": 1490000
+  },
+  "exceptions": [],
+  "inputs_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+  "netuid": 11,
+  "prices": [
+   {
+    "class": "sandbox",
+    "prev_price_uusd": 280000,
+    "price_uusd": 280000,
+    "ref_median_uusd": 280000,
+    "sources": [
+     {
+      "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "src0",
+      "value_uusd": 270000
+     },
+     {
+      "hash": "0000000000000000000000000000000000000000000000000000000000000001",
+      "name": "src1",
+      "value_uusd": 280000
+     },
+     {
+      "hash": "0000000000000000000000000000000000000000000000000000000000000002",
+      "name": "src2",
+      "value_uusd": 290000
+     }
+    ],
+    "spec": "tdx.c3-4",
+    "status": "live"
+   },
+   {
+    "class": "sandbox",
+    "prev_price_uusd": 560000,
+    "price_uusd": 560000,
+    "ref_median_uusd": 560000,
+    "sources": [
+     {
+      "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "src0",
+      "value_uusd": 540000
+     },
+     {
+      "hash": "0000000000000000000000000000000000000000000000000000000000000001",
+      "name": "src1",
+      "value_uusd": 560000
+     },
+     {
+      "hash": "0000000000000000000000000000000000000000000000000000000000000002",
+      "name": "src2",
+      "value_uusd": 580000
+     }
+    ],
+    "spec": "tdx.c3-8",
+    "status": "live"
+   }
+  ],
+  "rails": {
+   "band_bps": 2500,
+   "bonus_budget_ppm": 100000,
+   "bonus_cap_ppm": 200000,
+   "bonus_enabled": false,
+   "concentration_bps": 2000,
+   "max_move_bps": 1000,
+   "version": 1
+  },
+  "recycle": {
+   "hotkey": "5OWNER",
+   "uid": 0
+  },
+  "rule_version": "baseline-v1",
+  "tempo": 100,
+  "v": 1,
+  "window": {
+   "end_block": 36461,
+   "end_ts": 1763437532,
+   "start_block": 36100,
+   "start_ts": 1763433200
+  }
+ },
+ "name": "basic"
+}

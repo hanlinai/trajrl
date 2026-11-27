@@ -20,7 +20,7 @@ Date: 2026-11-24. This note maps `incentive-mechanism.md` onto what v1 implement
 | Concentration | Per-coldkey cap on paid share (20% of emission value) | Same |
 | Penalties | ×2 doubling per attributable incident in 24 h, capped at ×8. Overlaps are deducted once. Disputes hold the deduction | Same (proposed parameters) |
 | Debt | Per coldkey; carried by `opening` → `closing`; checked by validators through the continuity rail | Same |
-| Collateral | Per-hotkey registry replay (reserve, activate, exit, retire, chain_read). Only covered, active or exiting commitments earn | Same. The on-chain read path is still to be wired; operators record confirmed reads |
+| Collateral | **0 per unit at launch**: admitted units activate once verified. The per-hotkey registry (reserve, activate, exit, retire, chain_read) is in place; only covered, active or exiting commitments earn, and with a requirement of 0 every active one is covered | Same, once a non-zero amount is published. The on-chain read path is wired before that |
 | Admission | Applications, a signed capacity budget (ceiling, ready floor, exit reserve), approval → provisioning → verified → ready | Same |
 | Orders | Admin posts. Providers offer ready capacity. Assignment uses a fixed candidate set and a committed and revealed seed. Payment is pro rata at the posted price | Same |
 | Tempo | Native subtensor epochs: `(block + netuid + 1) % (tempo + 1) == 0` | Same |

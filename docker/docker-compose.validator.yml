@@ -1,0 +1,22 @@
+# Validator for SN11. Pin TRAJRL_MASTER_HOTKEY and TRAJRL_OWNER_HOTKEY from the
+# subnet's published values — never from the provider API.
+services:
+  validator:
+    build: { context: .., dockerfile: docker/Dockerfile.validator }
+    image: trajrl-validator:local
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      TRAJRL_WALLET: ${TRAJRL_WALLET:?wallet name}
+      TRAJRL_HOTKEY: ${TRAJRL_HOTKEY:?hotkey name}
+      TRAJRL_API: ${TRAJRL_API:-https://provider.trajrl.com}
+      TRAJRL_MASTER_HOTKEY: ${TRAJRL_MASTER_HOTKEY:?master hotkey ss58}
+      TRAJRL_OWNER_HOTKEY: ${TRAJRL_OWNER_HOTKEY:?owner hotkey ss58}
+      TRAJRL_NETUID: ${TRAJRL_NETUID:-11}
+      TRAJRL_NETWORK: ${TRAJRL_NETWORK:-finney}
+      TRAJRL_TEAM_KEYS: ${TRAJRL_TEAM_KEYS:-}
+    volumes:
+      - ${HOME}/.bittensor/wallets:/root/.bittensor/wallets:ro
+      - trajrl-state:/var/lib/trajrl
+volumes:
+  trajrl-state:

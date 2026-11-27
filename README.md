@@ -27,10 +27,11 @@ Eleven's agent allocation has a slot in the statement (`allocation`), empty in v
 
 ```bash
 uv venv && uv pip install -e '.[chain,dev]'
-pytest                                   # 59 tests, includes the shared golden vectors
+pytest                                   # 60 tests, includes the shared golden vectors
 
 export TRAJRL_WALLET=my-wallet TRAJRL_HOTKEY=my-hotkey
-export TRAJRL_MASTER_HOTKEY=5…   TRAJRL_OWNER_HOTKEY=5…    # pinned, published by the subnet
+export TRAJRL_MASTER_HOTKEY=5…                          # pinned, published with the launch
+export TRAJRL_OWNER_HOTKEY=5ECzcM7sixWNEeD6RbpeEHW1YcYMFejwHuvDBgQxVSjGyrMS   # SN11's owner on chain
 export TRAJRL_API=https://provider.trajrl.com
 trajrl-validator --once --dry-run        # verify + re-derive + log the vector, no chain write
 trajrl-validator                         # run

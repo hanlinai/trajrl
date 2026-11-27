@@ -149,6 +149,7 @@ give (65535 − Σ q_i) extra units, one each, by r_i descending, ties by uid as
 | Integrity | signature, digest, `v`, netuid, tempo == envelope tempo, every derived field equals the stated field, weights sum to 65535 |
 | Monotone | tempo ≥ last applied tempo (anti-replay) |
 | Constitution | `rails` equals the validator's pinned rails |
+| Owner recycle | `recycle.hotkey` equals the validator's pinned owner hotkey |
 | Catalog only | every `supply.spec` is in `prices` with `status == "live"`; no duplicate specs |
 | Price band | `ref_median_uusd` == median of `sources[].value_uusd` (even count: floor of mean of the two middles); `|price − ref| ≤ ref * band_bps // 10000`; if `prev_price_uusd` not null, `|price − prev| ≤ prev * max_move_bps // 10000` |
 | Verified supply only | a hotkey with zero `muh` and zero `orders_uusd` has `alloc_uusd == 0` (implied by derivation) |

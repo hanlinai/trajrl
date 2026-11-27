@@ -27,7 +27,7 @@ Eleven's agent allocation has a slot in the statement (`allocation`), empty in v
 
 ```bash
 uv venv && uv pip install -e '.[chain,dev]'
-pytest                                   # 58 tests, includes the shared golden vectors
+pytest                                   # 59 tests, includes the shared golden vectors
 
 export TRAJRL_WALLET=my-wallet TRAJRL_HOTKEY=my-hotkey
 export TRAJRL_MASTER_HOTKEY=5…   TRAJRL_OWNER_HOTKEY=5…    # pinned, published by the subnet

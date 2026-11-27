@@ -172,7 +172,8 @@ def derive(inp: dict) -> dict:
 
 def check_rails(result: dict, *, pinned_rails: dict | None = None,
                 team_keys: set[str] | None = None,
-                prev_closing: dict[str, int] | None = None) -> list[str]:
+                prev_closing: dict[str, int] | None = None,
+                owner_hotkey: str | None = None) -> list[str]:
     """Return the list of failed rails (empty = pass). Never raises."""
     fails: list[str] = []
     try:
@@ -185,6 +186,9 @@ def check_rails(result: dict, *, pinned_rails: dict | None = None,
             fails.append(f"integrity:{k}")
     if sum(w[2] for w in result.get("weights", [])) != U16:
         fails.append("integrity:weights-sum")
+    # The unpaid remainder goes to the owner pinned locally, never to a hotkey the statement names.
+    if owner_hotkey is not None and result["recycle"].get("hotkey") != owner_hotkey:
+        fails.append("owner:recycle")
 
     rails = result["rails"]
     if pinned_rails is not None:

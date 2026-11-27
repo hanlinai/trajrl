@@ -60,6 +60,16 @@ def test_policy_falls_back_to_cache_then_recycle():
     assert d.source == "recycle" and d.weights == [["5OWNER", 65535]]
 
 
+def test_policy_refuses_recycle_to_another_hotkey():
+    from trajrl_validator.mechanism import derive, strip
+    r = copy.deepcopy(BASIC)
+    r["recycle"]["hotkey"] = "5ATTACKER"
+    r = derive(strip(r))  # every number re-derives: only the recycle target is wrong
+    assert r["recycle"]["hotkey"] == "5ATTACKER"
+    d = _decide(r)
+    assert d.source == "recycle" and d.weights == [["5OWNER", 65535]] and "owner:recycle" in d.failures
+
+
 def test_policy_allocation_used_when_valid():
     r = copy.deepcopy(BASIC)
     r["allocation"] = copy.deepcopy(BASIC)

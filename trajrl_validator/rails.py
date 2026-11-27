@@ -42,12 +42,12 @@ def decide(result: dict | None, *, pinned_rails: dict | None, team_keys: set[str
             # An agent allocation must itself be a full statement body that
             # re-derives and passes every rail (same checks, its own numbers).
             f = check_rails(alloc, pinned_rails=pinned_rails, team_keys=team_keys,
-                            prev_closing=prev_closing) if isinstance(alloc, dict) else ["allocation:malformed"]
+                            prev_closing=prev_closing, owner_hotkey=owner_hotkey) if isinstance(alloc, dict) else ["allocation:malformed"]
             if not f:
                 return Decision("allocation", _pairs(alloc["weights"]))
             failures += [f"allocation:{x}" for x in f]
         f = check_rails(result, pinned_rails=pinned_rails, team_keys=team_keys,
-                        prev_closing=prev_closing)
+                        prev_closing=prev_closing, owner_hotkey=owner_hotkey)
         if not f:
             return Decision("baseline", _pairs(result["weights"]), failures)
         failures += f

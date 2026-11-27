@@ -2,7 +2,7 @@ import copy
 import json
 
 from conftest import load_vectors, make_envelope
-from trajrl_validator.chain import extrinsic_ok, resolve_uids
+from trajrl_validator.chain import extrinsic_ok, owner_mismatch, resolve_uids
 from trajrl_validator.rails import decide
 from trajrl_validator.schedule import should_submit
 from trajrl_validator.sync import verify_envelope
@@ -158,3 +158,9 @@ def test_tick_submits_and_refuses_replay(master, tmp_path):
     served["env"] = make_envelope(master, BASIC)
     out = validator.tick(cfg, client, ch, now=1001.0)
     assert not out["submitted"] and len(ch.calls) == 1
+
+
+def test_owner_must_match_chain():
+    assert owner_mismatch("5Owner", "5Owner") is None
+    assert owner_mismatch("5Owner", None) is None
+    assert "not the subnet owner" in owner_mismatch("5Owner", "5Other")

@@ -107,6 +107,11 @@ def main(argv: list[str] | None = None) -> None:
     from .chain import ChainClient
     from .heartbeat import post_heartbeat, touch
     chain = ChainClient(cfg.network, cfg.netuid)
+    if not cfg.dry_run:
+        from .chain import owner_mismatch
+        why = owner_mismatch(cfg.owner_hotkey, chain.owner_hotkey())
+        if why:
+            raise SystemExit(f"refusing to start: {why}")
     kp = None
     with httpx.Client(timeout=30.0) as client:
         while True:

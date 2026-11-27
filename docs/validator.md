@@ -4,6 +4,20 @@ In v1 the allocation is computed by a deterministic, published derivation and si
 validator reproduces it independently from the statement's own line items: it refuses anything it cannot
 reproduce and submits what it can.
 
+## SN11 on mainnet
+
+| | |
+|---|---|
+| Network / netuid | `finney` / `11` |
+| Owner hotkey (`TRAJRL_OWNER_HOTKEY`) | `5ECzcM7sixWNEeD6RbpeEHW1YcYMFejwHuvDBgQxVSjGyrMS`, the chain's `SubnetOwnerHotkey` |
+| Master hotkey (`TRAJRL_MASTER_HOTKEY`) | published with the launch announcement |
+| Commit-reveal | on (period 1); bittensor ≥ 10.5 commits the weights for you, nothing to configure |
+| `weights_rate_limit` / `activity_cutoff` | 100 / 5000 blocks; resubmitting every 150 blocks fits both |
+
+At start the validator reads `SubnetOwnerHotkey` and refuses to run when `TRAJRL_OWNER_HOTKEY` differs from it.
+Until the first statement is published, a validator has nothing it can verify and puts 100% on the owner hotkey
+(recycle), so it is safe to start before launch.
+
 ## Every tick (default 60 s)
 
 1. `GET {TRAJRL_API}/api/subnet/v1/tempo/latest`. The response is capped at 4 MiB.

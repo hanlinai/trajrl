@@ -44,6 +44,15 @@ def resolve_uids(weights: list[list], hotkeys_on_chain: list[str],
     return [s[0] for s in scaled], [s[1] for s in scaled], dropped
 
 
+def owner_mismatch(pinned: str, on_chain: str | None) -> str | None:
+    """Why the pinned owner hotkey must not be used, or None when it matches the chain."""
+    if not on_chain:
+        return None  # unknown (old node): the pinned value stands
+    if pinned != on_chain:
+        return f"TRAJRL_OWNER_HOTKEY {pinned} is not the subnet owner on chain ({on_chain})"
+    return None
+
+
 def extrinsic_ok(res) -> tuple[bool, str]:
     """bittensor 10.x ExtrinsicResponse has no __bool__ — read .success."""
     success = getattr(res, "success", None)
@@ -78,6 +87,13 @@ class ChainClient:
                 last = e
                 self.close()
         raise last  # type: ignore[misc]
+
+    def owner_hotkey(self) -> str | None:
+        """The subnet owner's hotkey as the chain records it (SubnetOwnerHotkey)."""
+        view = self.snapshot()
+        v = view.sub.query_subtensor("SubnetOwnerHotkey", params=[self.netuid])
+        v = getattr(v, "value", v)
+        return str(v) if v else None
 
     def set_weights(self, view: ChainView, *, wallet: str, hotkey: str,
                     uids: list[int], weights: list[int]) -> bool:

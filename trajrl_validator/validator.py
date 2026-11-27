@@ -48,6 +48,8 @@ def tick(cfg: Config, client: httpx.Client, chain, *, now: float | None = None) 
             result, digest = None, None
     except Exception as e:  # noqa: BLE001
         reason = f"fetch:{type(e).__name__}"
+    if result is None:
+        print(f"[sync] no usable statement: {reason}", flush=True)
 
     tempo = result["tempo"] if result else last_applied(st)
     la = last_applied(st)

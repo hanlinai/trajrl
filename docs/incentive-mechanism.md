@@ -293,6 +293,8 @@ Model choice, inference provider, token consumption and user revenue do not ente
 
 ### Collateral
 
+**At launch the collateral per unit is 0.** Admitted units activate once the platform verifies them, and no step needs the coldkey except registering the hotkey. Until collateral is introduced, penalties are carried as debt against the coldkey's future contribution. Admission stays limited by the signed capacity budget, attestation and probation. The rules below apply once a non-zero amount is published, which will be announced in advance with time to lock it.
+
 Each class and specification has a published fixed alpha collateral requirement per unit:
 
 ```text
